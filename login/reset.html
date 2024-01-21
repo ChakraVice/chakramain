@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage Check</title>
+</head>
+<body>
+
+<div id="message"></div>
+<button onclick="removeChakraLogin()">Remove chakralogin</button>
+
+<script>
+  // ローカルストレージから値を取得
+  var chakraLoginValue = localStorage.getItem('chakralogin');
+  var messageElement = document.getElementById('message');
+
+  // ローカルストレージに「chakralogin」があるか確認
+  if (chakraLoginValue === 'true') {
+    messageElement.textContent = '「chakralogin」はローカルストレージにあります。';
+  } else {
+    messageElement.textContent = '「chakralogin」はローカルストレージにありません。';
+  }
+
+  function removeChakraLogin() {
+    // ローカルストレージから「chakralogin」を削除
+    localStorage.removeItem('chakralogin');
+    messageElement.textContent = '「chakralogin」が削除されました。';
+  }
+</script>
+
+</body>
+</html>
