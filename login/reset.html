@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Local Storage Check</title>
+  <title>reset</title>
 </head>
 <body>
 
 <div id="message"></div>
-<button onclick="removeChakraLogin()">Remove chakralogin</button>
+<button onclick="removeChakraLogin()">ログアウト</button>
 
 <script>
   // ローカルストレージから値を取得
@@ -17,15 +17,15 @@
 
   // ローカルストレージに「chakralogin」があるか確認
   if (chakraLoginValue === 'true') {
-    messageElement.textContent = '「chakralogin」はローカルストレージにあります。';
+    messageElement.textContent = 'ログインしています';
   } else {
-    messageElement.textContent = '「chakralogin」はローカルストレージにありません。';
+    messageElement.textContent = 'ログインしていません';
   }
 
   function removeChakraLogin() {
     // ローカルストレージから「chakralogin」を削除
     localStorage.removeItem('chakralogin');
-    messageElement.textContent = '「chakralogin」が削除されました。';
+    messageElement.textContent = '「ログアウトしました';
   }
 </script>
 
