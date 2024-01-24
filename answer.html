@@ -56,6 +56,13 @@
       background-color: #555;
     }
   </style>
+    <script>
+        var chakraLoginValue = localStorage.getItem("chakralogin");
+        
+        if (!chakraLoginValue) {
+            window.location.href = "login/index.html";
+        }
+    </script>    
 </head>
 <body>
         <section>
