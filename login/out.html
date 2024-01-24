@@ -11,21 +11,18 @@
 <button onclick="removeChakraLogin()">ログアウト</button>
 
 <script>
-  // ローカルストレージから値を取得
   var chakraLoginValue = localStorage.getItem('chakralogin');
   var messageElement = document.getElementById('message');
 
-  // ローカルストレージに「chakralogin」があるか確認
   if (chakraLoginValue === 'true') {
-    messageElement.textContent = 'ログインしています';
+    messageElement.textContent = 'あなたはログインしています';
   } else {
-    messageElement.textContent = 'ログインしていません';
+    messageElement.textContent = 'あなたはログインしていません';
   }
 
   function removeChakraLogin() {
-    // ローカルストレージから「chakralogin」を削除
     localStorage.removeItem('chakralogin');
-    messageElement.textContent = '「ログアウトしました';
+    messageElement.textContent = 'あなたはログインしていません';
   }
 </script>
 
