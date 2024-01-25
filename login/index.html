@@ -73,11 +73,11 @@
       var passwordInput = document.getElementById('passwordInput').value;
       var errorMessage = document.getElementById('errorMessage');
 
-      if (passwordInput === '1092') {
+      if (passwordInput === '1102') {
         localStorage.setItem('chakralogin', 'true');
         window.location.href = '../index.html';
       } else {
-        errorMessage.innerHTML = '無効';
+        errorMessage.innerHTML = '無効または期限切れ';
       }
     }
 
