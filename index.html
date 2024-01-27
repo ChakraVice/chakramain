@@ -76,12 +76,12 @@
         .feature7 { background-image: url('texture/3.png'); }
         .feature8 { background-image: url('texture/screen.png'); }
         .feature9 { background-image: url('texture/gpt.png'); }
+        .feature10 { background-image: url('texture/music.png'); }
 
         .announcement1 { background-image: url('texture/ank.png'); }
         .announcement3 { background-image: url('texture/line.png'); }
         .announcement2 { background-image: url('texture/ans.png'); }
-        .announcement2024 { background-image: url('texture/2024.png'); }
-        .announcement20242 { background-image: url('texture/20242.png'); }
+        .announcementp { background-image: url('texture/plus.png'); }
 
         .box-text {
             display: flex;
@@ -171,8 +171,14 @@
     <header>
         <h1>Chakra</h1>
     </header>
-
     <section id="announcements">
+        <div class="announcement-box" onclick="location.href='line.html'">
+            <div class="box-image announcement3"></div>
+            <div class="box-text">
+                <h3>LINE</h3>
+                <p>お問い合わせやグループへの参加はこちら</p>
+            </div>
+        </div>
         <div class="announcement-box" onclick="location.href='https://forms.gle/eNKKMgt4U16cJcoS6'">
             <div class="box-image announcement1"></div>
             <div class="box-text">
@@ -191,6 +197,13 @@
     </section>
 
     <section id="features">
+        <div class="feature-box" onclick="location.href='https://msc.circulapp.lol'">
+            <div class="box-image feature10"></div>
+            <div class="box-text">
+                <h3>Music</h3>
+                <p>この世のほとんどの曲を収録してます (左の検索を使ってください)</p>
+            </div>
+        </div>
         <div class="feature-box" onclick="location.href='https://prx.circulapp.lol'">
             <div class="box-image feature1"></div>
             <div class="box-text">
@@ -242,6 +255,5 @@
             </div>
         </div>
     </section>
-
 </body>
 </html>

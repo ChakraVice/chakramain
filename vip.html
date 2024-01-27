@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <title>マイドライブ - GoogleDrive</title>
+    <link rel="icon" href="texture/logo.ico">
+    <style>
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 490px;
+}
+
+table tr:last-child{
+  border-bottom:solid 1px #ddd;
+}
+
+table th{
+  text-align: center;
+  padding: 10px 0;
+  border-right:solid 1px #ddd;
+  border-left:solid 1px #ddd;
+  width: 155px;
+}
+
+table th:nth-child(1){
+  background-color:#dddddd;
+}
+
+table th:nth-child(3){
+  background-color:#f5b932;
+  color: white;
+}
+
+table tr:nth-child(2) td{
+  font-size: 30px;
+}
+
+table td{
+  text-align: center;
+  padding: 7px 0;
+  border-right:solid 1px #ddd;
+  border-left:solid 1px #ddd;
+  width: 155px;
+}
+
+table td a{
+  background-color: #25b327;
+  color: white;
+  padding:5px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+table .popular{
+  width: 180px;
+}
+
+table th.popular{
+  position: relative;
+}
+
+table th.popular span.no1{
+  position: absolute;
+  top: -10px;
+  left:calc(50% - 30px);
+  background: #bdcc28;
+  width: 60px;
+  font-size: 10px;
+  border-radius: 15px;
+  line-height: 1;
+  padding: 5px;
+}
+
+table th.popular span.inner{
+  position: absolute;
+  color:white;
+  background-color: #f34955;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 180px;
+  padding: 10px 0;
+}
+    </style>
+    
+    <script>
+        var chakraLoginValue = localStorage.getItem("chakralogin");
+        
+        if (!chakraLoginValue) {
+            window.location.href = "login/index.html";
+        }
+    </script>        
+</head>
+<body> 
+
+    <table>
+        <tr>
+          <th>無料プラン</th>
+          <th class="popular"><span class="inner"><span class="no1">人気No.1</span>初級プラン</span></th>
+          <th>上級プラン</th>
+        </tr>
+        <tr>
+          <td>¥0</td>
+          <td class="popular">¥5,000</td>
+          <td>¥8,000</td>
+        </tr>
+        <tr>
+          <td><a href="#">申し込み</a></td>
+          <td><a href="#">申し込み</a></td>
+          <td><a href="#">申し込み</a></td>
+        </tr>
+        <tr>
+          <td>保証なし</td>
+          <td class="popular">保証1ヶ月</td>
+          <td>保証3ヶ月</td>
+        </tr>
+      </table>
+</body>
+</html>
