@@ -82,7 +82,7 @@
         .announcement1 { background-image: url('texture/ank.png'); }
         .announcement3 { background-image: url('texture/line.png'); }
         .announcement2 { background-image: url('texture/ans.png'); }
-        .announcementp { background-image: url('texture/plus.png'); }
+        .announcementp { background-image: url('texture/dt.png'); }
 
         .box-text {
             display: flex;
@@ -153,15 +153,9 @@
         }
     </style>
     
+    <script src="security/password.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="texture/linkrel/first.js"></script>
-    <script>
-        var chakraLoginValue = localStorage.getItem("chakralogin");
-        
-        if (!chakraLoginValue) {
-            window.location.href = "login/index.html";
-        }
-    </script>        
+    <script src="texture/linkrel/first.js"></script>     
 </head>
 <body> 
     
@@ -174,6 +168,13 @@
     </header>
 
     <section id="announcements">
+        <div class="announcement-box" onclick="location.href='donate.html'">
+            <div class="box-image announcementp"></div>
+            <div class="box-text">
+                <h3>寄付 / 支援</h3>
+                <p>宜しくお願いします</p>
+            </div>
+        </div>
         <div class="announcement-box" onclick="location.href='line.html'">
             <div class="box-image announcement3"></div>
             <div class="box-text">
