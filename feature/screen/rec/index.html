@@ -12,6 +12,12 @@
   <body>
     <button>画面録画を開始する</button>
     <script src="script.js"></script>
-    <script src="../../../security/password.js"></script>
+    <script>
+      var chakraLoginValue = localStorage.getItem("chakralogin");
+      
+      if (!chakraLoginValue) {
+          window.location.href = "../../../login/index.html";
+      }
+  </script>
   </body>
 </html>

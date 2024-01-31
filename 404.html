@@ -26,7 +26,13 @@
 
 </head>
 
-<script src="security/password.js"></script>
+<script>
+	var chakraLoginValue = localStorage.getItem("chakralogin");
+	
+	if (!chakraLoginValue) {
+		window.location.href = "login/index.html";
+	}
+</script>
 
 <body>
 

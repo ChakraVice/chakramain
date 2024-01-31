@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>マイドライブ - GoogleDrive</title>
     <link rel="icon" href="../texture/logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Kosugi', sans-serif;
             text-align: center;
             background-color: #f5f5f5;
             margin: 0;
@@ -74,13 +75,19 @@
         text-decoration: none;
         }
     </style>
-<script src="../security/password.js"></script>   
+    <script>
+        var chakraLoginValue = localStorage.getItem("chakralogin");
+        
+        if (!chakraLoginValue) {
+            window.location.href = "../login/index.html";
+        }
+    </script>
 </head>
 <body>
     <div id="container">
         <h1>チャット</h1>
-        <Check>会話したいチャットルームのIDを入力してください<br>
-            ( IDを取得する場合はLINEまたはフォームまで ) </p>
+        <Check>参加したいチャットルームのIDを入力してください<br>
+            IDはフォームまたはLINEで取得できます</p>
 
         <label for="inputId"></label>
         <input type="text" id="inputId" placeholder="大文字小文字が間違っていると参加できないので注意">

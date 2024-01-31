@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
     <title>マイドライブ - GoogleDrive</title>
     <link rel="icon" href="texture/logo.ico">
     <link rel="stylesheet" href="texture/css/index.css">
@@ -12,16 +13,23 @@
             font-family: 'Zen Maru Gothic', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: rgb(235, 243, 250);
+            background-color: rgb(33, 33, 33);
+        }
+
+        header h1 {
+            background: linear-gradient(45deg, #3c51c4, #29d0a1);
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
         }
 
         header {
-            background-color: #34708e;
-            color: #fff;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #1a1a1b;
+            color: #ffffff;
             text-align: center;
             padding: 20px;
             font-size: 20px;
-            cursor: pointer;
         }
 
         header:hover {
@@ -40,12 +48,13 @@
         section {
             margin: 20px;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.259);
+            background-color: #2a2a2a;
+            box-shadow: 0 0 15px rgba(36, 36, 36, 0.259);
         }
 
         h2, h3 {
             margin: 0;
+            text-align: center;
         }
 
         h2 {
@@ -57,7 +66,9 @@
         }
 
         p {
+            color: #FFF;
             margin: 5px 0;
+            text-align: center;
         }
 
         .box-image {
@@ -66,23 +77,6 @@
             background-size: cover;
             margin-right: 15px;
         }
-
-        .feature1 { background-image: url('texture/v3.png'); }
-        .feature2 { background-image: url('texture/game.png'); }
-        .feature3 { background-image: url('texture/yt.png'); }
-        .feature4 { background-image: url('texture/mc.png'); }
-        .feature5 { background-image: url('texture/his.png'); }
-        .feature6 { background-image: url('texture/id.png'); }
-        .feature7 { background-image: url('texture/3.png'); }
-        .feature8 { background-image: url('texture/screen.png'); }
-        .feature9 { background-image: url('texture/gpt.png'); }
-        .feature10 { background-image: url('texture/music.png'); }
-        .feature11 { background-image: url('texture/rec.png'); }
-
-        .announcement1 { background-image: url('texture/ank.png'); }
-        .announcement3 { background-image: url('texture/line.png'); }
-        .announcement2 { background-image: url('texture/ans.png'); }
-        .announcementp { background-image: url('texture/dt.png'); }
 
         .box-text {
             display: flex;
@@ -151,21 +145,27 @@
             right: 10px;
             cursor: pointer;
         }
+
+        
     </style>
     
-    <script src="security/password.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="texture/linkrel/first.js"></script>     
+    <script>
+        var chakraLoginValue = localStorage.getItem("chakralogin");
+        
+        if (!chakraLoginValue) {
+            window.location.href = "login/index.html";
+        }
+    </script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 </head>
 <body> 
-    
-    <div class="logo_fadein">
-        <p></p>
-      </div>
-
     <header>
-        <h1>準備中！</h1>
+        <h1>Donate</h1>
     </header>
 
+    <section>
+    <p>fdsfdc</p>
+    </section>
 </body>
 </html>
