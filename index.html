@@ -1,58 +1,286 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, shrink-to-fit=no" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-
-    <title>Vex 7 | BallBang</title>
-
-    <link rel="icon" type="image/png" href="assets/icon.png" />
-    <!-- For apple devices -->
-    <link rel="apple-touch-icon" type="image/png" href="assets/icon.png" />
-    <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
-  </head>
-
-  <body>
-    <div id="content"></div>
-    <div id="loader">Loading...</div>
-    <div id="orientation"></div>
-    <script src="/js/main.js"></script>
-    <script type="text/javascript">
-      var _azerionIntegration = {
-        rtgEnabled: true,
-        lbEnabled: false,
-        fbType: "dummy",
-        alxType: "std",
-        af: false,
-        sa: false,
-        la: false,
-        bd: 0,
-        playBtn: true,
-        cp: false,
-      };
-
-      var libs = [];
-
-      var gameName = "vex7.min.js";
-
-      var enableAnalytics, azAdWrapper, _azFeedback;
-
-      //This all here is for cache busting;
-      function addScript(src, buster, callback) {
-        var s = document.createElement("script");
-        s.setAttribute("src", src + "?v=" + buster);
-        if (typeof callback === "function") {
-          s.onload = callback;
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <title>マイドライブ - GoogleDrive</title>
+    <link rel="icon" href="texture/logo.ico">
+    <link rel="stylesheet" href="texture/css/index.css">
+    <style>
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(235, 243, 250);
+            cursor: crosshair;
         }
-        document.body.appendChild(s);
-      }
 
-      addScript("version.js", Date.now(), function () {
-        addScript(gameName, version, function () {});
-      });
+        header {
+            background-color: #34708e;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        header:hover {
+        color: #ffffff;
+        transition: color 0.5s;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+        text-align: right;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.259);
+        }
+
+        h2, h3 {
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .box-image {
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            margin-right: 15px;
+        }
+
+        .feature1 { background-image: url('texture/v3.png'); }
+        .feature2 { background-image: url('texture/game.png'); }
+        .feature3 { background-image: url('texture/yt.png'); }
+        .feature4 { background-image: url('texture/mc.png'); }
+        .feature5 { background-image: url('texture/his.png'); }
+        .feature6 { background-image: url('texture/id.png'); }
+        .feature7 { background-image: url('texture/3.png'); }
+        .feature8 { background-image: url('texture/screen.png'); }
+        .feature9 { background-image: url('texture/gpt.png'); }
+        .feature10 { background-image: url('texture/music.png'); }
+        .feature11 { background-image: url('texture/rec.png'); }
+        .feature12 { background-image: url('texture/chatgpt.png'); }
+
+        .announcement1 { background-image: url('texture/ank.png'); }
+        .announcement3 { background-image: url('texture/line.png'); }
+        .announcement2 { background-image: url('texture/ans.png'); }
+        .announcementp { background-image: url('texture/dt.png'); }
+
+        .box-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-box, .announcement-box {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            position: relative;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .feature-box:hover, .announcement-box:hover {
+        background-color: rgba(200, 200, 200, 0.258);
+        transform: translateX(10px);
+        }
+
+        html {
+        font-family: sans-serif;
+        }
+
+        a {
+        color: #999;
+        text-decoration: none;
+        }
+
+        ul {
+        list-style: none;
+        padding: 0;
+        }
+
+        #text {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .logo_fadein{
+	    background: #FFF;
+	    position: fixed;
+        align-items: center;
+        text-align: center;
+	    top: 0;
+	    left: 0;
+	    height: 100%;
+	    width: 100%;
+	    z-index: 999;
+        }
+        .logo_fadein p {
+        font-size: 50px;
+	    position: fixed;
+	    left: 50%;
+	    top: 50%;
+	    transform: translate(-50%, -50%);
+	    display: none;
+	    z-index: 9999;
+	    width: 1000px;
+        }
+
+        #contact {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        
+    </style>
+    
+    <script>
+        var chakraLoginValue = localStorage.getItem("chakralogin");
+        
+        if (!chakraLoginValue) {
+            window.location.href = "login/index.html";
+        }
     </script>
-  </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="texture/linkrel/first.js"></script>     
+</head>
+<body> 
+
+    <div class="logo_fadein">
+        <p></p>
+      </div>
+
+    <header>
+        <h1>Chakra</h1>
+    </header>
+
+    <section id="announcements">
+        <div class="announcement-box" onclick="location.href='donate.html'">
+            <div class="box-image announcementp"></div>
+            <div class="box-text">
+                <h3>寄付 / 支援</h3>
+                <p>(^-^)</p>
+            </div>
+        </div>
+        <div class="announcement-box" onclick="location.href='line.html'">
+            <div class="box-image announcement3"></div>
+            <div class="box-text">
+                <h3>LINE</h3>
+                <p>お問い合わせやグループへの参加はこちら</p>
+            </div>
+        </div>
+        <div class="announcement-box" onclick="location.href='https://forms.gle/eNKKMgt4U16cJcoS6'">
+            <div class="box-image announcement1"></div>
+            <div class="box-text">
+                <h3>お問い合わせ</h3>
+                <p>フォームです</p>
+            </div>
+        </div>
+        <div class="announcement-box" onclick="location.href='answer.html'">
+            <div class="box-image announcement2"></div>
+            <div class="box-text">
+                <h3>回答</h3>
+                <p>フォームの回答です
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="feature-box" onclick="location.href='https://prx.circulapp.lol'">
+            <div class="box-image feature1"></div>
+            <div class="box-text">
+                <h3>ChakraProxy v3</h3>
+                <p>制限を回避してサイトにアクセス / セーフサーチ有効</p>
+            </div>
+        </div>
+        <div class="feature-box" onclick="location.href='feature/proxy/index.html'">
+            <div class="box-image feature1"></div>
+            <div class="box-text">
+                <h3>ChakraProxy V2</h3>
+                <p>制限を回避してサイトにアクセス / セーフサーチ無効</p>
+            </div>
+        </div>
+        <div class="feature-box" onclick="location.href='https://yt.circulapp.lol'">
+            <div class="box-image feature3"></div>
+            <div class="box-text">
+                <h3>Youtube</h3>
+                <p>制限を回避して動画を視聴 / 広告なし
+                </p>
+            </div>
+        </div>
+        <div class="feature-box" onclick="location.href='https://msc.circulapp.lol'">
+            <div class="box-image feature10"></div>
+            <div class="box-text">
+                <h3>Music</h3>
+                <p>音楽を聴くことができます</p>
+            </div>
+        </div>
+        <div class="feature-box" onclick="location.href='feature/history/index.html'">
+            <div class="box-image feature5"></div>
+            <div class="box-text">
+                <h3>履歴スパム</h3>
+                <p>履歴を隠蔽します</p>
+            </div>
+        </div>
+        <div class="feature-box" onclick="location.href='feature/gpt/index.html'">
+            <div class="box-image feature12"></div>
+            <div class="box-text">
+                <h3>ChatGPT</h3>
+                <p>ログイン不要でChatGPTを使用できます</p>
+            </div>
+        </div>
+        <div class="feature-box" onclick="location.href='feature/screen/index.html'">
+            <div class="box-image feature8"></div>
+            <div class="box-text">
+                <h3>スクリーンショット</h3>
+                <p>スクリーンショットを撮ることができます</p>
+            </div>
+        </div>
+        <div class="feature-box" onclick="location.href='feature/screen/rec/index.html'">
+            <div class="box-image feature11"></div>
+            <div class="box-text">
+                <h3>画面録画</h3>
+                <p>画面を録画できます</p>
+            </div>
+        </div>
+        <div class="feature-box" onclick="location.href='id/index.html'">
+            <div class="box-image feature6"></div>
+            <div class="box-text">
+                <h3>チャット</h3>
+                <p>コミュニケーションは大切です</p>
+            </div>
+        </div>
+        <div class="feature-box" onclick="location.href='https://sites.google.com/view/ugothis/%E6%83%91%E6%98%9F%E3%82%B2%E3%83%BC%E3%83%A0?authuser=1'">
+            <div class="box-image feature2"></div>
+            <div class="box-text">
+                <h3>ゲーム</h3>
+                <p>おもんない</p>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
