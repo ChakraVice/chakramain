@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>マイドライブ - GoogleDrive</title>
+    <link rel="icon" href="../../texture/logo.ico">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+
+    <body>
+        <iframe src="https://shadow.circulapp.lol" frameborder="0" allowfullscreen></iframe>
+    </body>
+
+    <script>
+        var chakraLoginValue = localStorage.getItem("chakrapremium");
+        
+        if (!chakraLoginValue) {
+            window.location.href = "../../login/premium.html";
+        }
+    </script>
+</body>
+</html>
