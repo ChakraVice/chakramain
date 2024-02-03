@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             background-color: rgb(235, 243, 250);
-            cursor: crosshair;
+            cursor: default;
         }
 
         header {
@@ -150,10 +150,40 @@
             position: fixed;
             bottom: 10px;
             right: 10px;
-            cursor: pointer;
         }
 
-        
+        body {
+         margin: 0;
+        padding: 0;
+         }
+
+        .round-button {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: #db3934;
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+        z-index: 1000;
+        }
+
+        .round-button:hover {
+        background-color: #b92929;
+        }
+
+        .round-button img {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        }  
     </style>
     
     <script>
@@ -169,6 +199,10 @@
 </head>
 <body> 
 
+    <a href="donate.html" class="round-button">
+        <img src="texture/cnt.png" alt="icon">
+      </a>
+
     <div class="logo_fadein">
         <p></p>
       </div>
@@ -178,14 +212,7 @@
     </header>
 
     <section id="announcements">
-        <div class="announcement-box" onclick="location.href='line.html'">
-            <div class="box-image announcement3"></div>
-            <div class="box-text">
-                <h3>LINE</h3>
-                <p>お問い合わせやグループへの参加はこちら</p>
-            </div>
-        </div>
-        <div class="announcement-box" onclick="location.href='https://forms.gle/eNKKMgt4U16cJcoS6'">
+        <div class="announcement-box" onclick="location.href='https://forms.gle/4enm84eXLihCte4w7'">
             <div class="box-image announcement1"></div>
             <div class="box-text">
                 <h3>お問い合わせ</h3>
@@ -200,9 +227,32 @@
                 </p>
             </div>
         </div>
+        <div class="announcement-box" onclick="location.href='line.html'">
+            <div class="box-image announcement3"></div>
+            <div class="box-text">
+                <h3>LINE</h3>
+                <p>お問い合わせやグループへの参加はこちら</p>
+            </div>
+        </div>
+        <div class="announcement-box" onclick="location.href='donate.html'">
+            <div class="box-image announcementp"></div>
+            <div class="box-text">
+                <h3>寄付</h3>
+                <p>おねがいします</p>
+            </div>
+        </div>
     </section>
 
     <section id="features">
+            <!--
+        <div class="feature-box" onclick="location.href='feature/proxy/shadow.html'">
+            <div class="box-image feature1"></div>
+            <div class="box-text">
+                <h3>ChakraProxy Shadow</h3>
+                <p>はやい</p>
+            </div>
+        </div
+        -->
         <div class="feature-box" onclick="location.href='https://prx.circulapp.lol'">
             <div class="box-image feature1"></div>
             <div class="box-text">
