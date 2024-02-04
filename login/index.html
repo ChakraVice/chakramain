@@ -68,20 +68,20 @@
     <p id="errorMessage"></p>
   </div>
 
-  <script>
+<script>
    function checkPassword() {
       var passwordInput = document.getElementById('passwordInput').value;
       var errorMessage = document.getElementById('errorMessage');
 
-      if (passwordInput === '1092') {
+      if (passwordInput === '1102') {
         localStorage.setItem('chakralogin', 'true');
         window.location.href = '../index.html';
+      } else if (passwordInput === '1092') {
+        errorMessage.innerHTML = '期限切れ';
       } else {
-        errorMessage.innerHTML = '無効または期限切れ';
+        errorMessage.innerHTML = '無効';
       }
     }
-
-    // ソースから特定しちゃうチー🤓 とか思ってんだろｗ
-  </script>
+</script>
 </body>
 </html>
