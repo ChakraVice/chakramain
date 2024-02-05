@@ -63,7 +63,8 @@
         }
 
         h3 {
-            font-size: 20px;
+            font-size: 30px;
+            color: white;
         }
 
         p {
@@ -155,8 +156,8 @@
 	position: relative;
 	overflow: hidden;
 	text-decoration: none;
-	height: 4rem;
-	width: 120px;
+	height: 3.5rem;
+	width: 200px;
 	margin: auto;
 	padding: 0 4rem;
 	border-radius: 100vw;
@@ -199,6 +200,16 @@ a.btn_25:hover::before {
   opacity: 1;
 }
 
+.store-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.store-badges__link {
+  margin: 0 10px; /* リンク間の余白を設定 */
+}
+
     </style>
     
     <script>
@@ -217,9 +228,10 @@ a.btn_25:hover::before {
     </header>
 
     <section>
-    <p>サイト維持のためによろしくお願いします</p><br>
-    <a href="donatepay.html" class="btn_25"><span>寄付する</span></a>
-
+    <p>サイト維持のためによろしくお願いします</p>
+    <p>新規登録で100円分の残高を得られるのでそれを送金してもらっても大丈夫です</p><br>
+    <a href="texture/kyash.png" class="btn_25"><span>Kyashで寄付する</span></a><br>
+    <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;" class="store-badges loading-animation-enable"><a href="https://app.appsflyer.com/id1084264883?pid=Publicweb&amp;c=firstview" class="store-badges__link w-inline-block"><img src="https://assets-global.website-files.com/5db15c3bca3871afff172c17/63523d857f1666d6733fb8eb_button-store-applestore.svg" alt="App StoreからKyashアプリをダウンロード" loading="eager"></a><a href="https://app.appsflyer.com/co.kyash?pid=Publicweb&amp;c=firstview" class="store-badges__link w-inline-block"><img src="https://assets-global.website-files.com/5db15c3bca3871afff172c17/63523c46087c6f815c2938b5_button-store-googleplay.svg" alt="Google PlayからKyashアプリをダウンロード" loading="eager"></a></div>
     </section>
 </body>
 </html>
