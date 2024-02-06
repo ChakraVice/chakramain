@@ -79,6 +79,8 @@
         .feature10 { background-image: url('texture/music.png'); }
         .feature11 { background-image: url('texture/rec.png'); }
         .feature12 { background-image: url('texture/chatgpt.png'); }
+        .feature13 { background-image: url('texture/v31.png'); }
+        .feature14 { background-image: url('texture/v32.png'); }
 
         .announcement1 { background-image: url('texture/ank.png'); }
         .announcement3 { background-image: url('texture/line.png'); }
@@ -124,28 +126,6 @@
             transition: opacity 0.5s ease-in-out;
         }
 
-        .logo_fadein{
-	    background: #FFF;
-	    position: fixed;
-        align-items: center;
-        text-align: center;
-	    top: 0;
-	    left: 0;
-	    height: 100%;
-	    width: 100%;
-	    z-index: 999;
-        }
-        .logo_fadein p {
-        font-size: 50px;
-	    position: fixed;
-	    left: 50%;
-	    top: 50%;
-	    transform: translate(-50%, -50%);
-	    display: none;
-	    z-index: 9999;
-	    width: 1000px;
-        }
-
         #contact {
             position: fixed;
             bottom: 10px;
@@ -156,34 +136,6 @@
          margin: 0;
         padding: 0;
          }
-
-        .round-button {
-        position: fixed;
-        bottom: 15px;
-        right: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        background-color: #3469db;
-        color: #fff;
-        text-decoration: none;
-        font-size: 20px;
-        transition: background-color 0.3s ease;
-        z-index: 1000;
-        }
-
-        .round-button:hover {
-        background-color: #293cb9;
-        }
-
-        .round-button img {
-        width: 40px;
-        height: 40px;
-        margin: 0;
-        }  
     </style>
     
     <script>
@@ -194,21 +146,8 @@
         }
     </script>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="texture/linkrel/first.js"></script>     
-</head>
-<body> 
-
-    <a href="donate.html" class="round-button">
-        <img src="texture/cnt.png" alt="icon">
-      </a>
-
-    <div class="logo_fadein">
-        <p></p>
-      </div>
-
     <header>
-        <h1>Chakra</h1>
+        <h1>circula.lol</h1>
     </header>
 
     <section id="announcements">
@@ -227,44 +166,28 @@
                 </p>
             </div>
         </div>
-        <div class="announcement-box" onclick="location.href='line.html'">
-            <div class="box-image announcement3"></div>
-            <div class="box-text">
-                <h3>LINE</h3>
-                <p>お問い合わせやグループへの参加はこちら</p>
-            </div>
-        </div>
-        <div class="announcement-box" onclick="location.href='donate.html'">
-            <div class="box-image announcementp"></div>
-            <div class="box-text">
-                <h3>Kyashで寄付</h3>
-                <p>新規登録で100円ゲットできます</p>
-            </div>
-        </div>
     </section>
 
     <section id="features">
-            <!--
         <div class="feature-box" onclick="location.href='feature/proxy/shadow.html'">
-            <div class="box-image feature1"></div>
+            <div class="box-image feature13"></div>
             <div class="box-text">
-                <h3>ChakraProxy Shadow</h3>
-                <p>はやい</p>
+                <h3>Proxy V4</h3>
+                <p>フィルタリング回避</p>
             </div>
-        </div
-        -->
+        </div>
         <div class="feature-box" onclick="location.href='https://prx.circulapp.lol'">
-            <div class="box-image feature1"></div>
+            <div class="box-image feature14"></div>
             <div class="box-text">
-                <h3>ChakraProxy v3</h3>
-                <p>制限を回避してサイトにアクセス / セーフサーチ有効</p>
+                <h3>Proxy V3</h3>
+                <p>フィルタリング回避</p>
             </div>
         </div>
         <div class="feature-box" onclick="location.href='feature/proxy/index.html'">
             <div class="box-image feature1"></div>
             <div class="box-text">
-                <h3>ChakraProxy V2</h3>
-                <p>制限を回避してサイトにアクセス / セーフサーチ無効</p>
+                <h3>Proxy V2</h3>
+                <p>フィルタリング回避</p>
             </div>
         </div>
         <div class="feature-box" onclick="location.href='https://yt.circulapp.lol'">
@@ -307,19 +230,16 @@
             <div class="box-image feature6"></div>
             <div class="box-text">
                 <h3>チャット</h3>
-                <p>コミュニケーションは大切です</p>
+                <p>チャットができます</p>
             </div>
         </div>
         <div class="feature-box" onclick="location.href='https://sites.google.com/view/ugothis/%E6%83%91%E6%98%9F%E3%82%B2%E3%83%BC%E3%83%A0?authuser=1'">
             <div class="box-image feature2"></div>
             <div class="box-text">
                 <h3>ゲーム</h3>
-                <p>おもんない</p>
+                <p>ゲームが遊べます</p>
             </div>
         </div>
     </section>
-
-<a href="index.html"><img src="https://www.f-counter.net/j/63/1707122731/" alt="毎月リセット"></a>
-
 </body>
 </html>
