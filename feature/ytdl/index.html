@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Downloader & Player</title>
+    <style>
+        #downloadButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #downloadButton:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>YouTube Video Downloader & Player</h1>
+    <form id="downloadForm">
+        <label for="videoId">YouTube Video ID:</label>
+        <input type="text" id="videoId" name="videoId" required>
+        <button type="submit" id="downloadButton">Download & Play</button>
+    </form>
+
+    <video id="videoPlayer" controls autoplay style="display: none;"></video>
+
+    <script>
+        document.getElementById('downloadForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const videoId = document.getElementById('videoId').value.trim();
+            if (!videoId) {
+                alert('Please enter a YouTube video ID.');
+                return;
+            }
+
+            document.getElementById('downloadButton').disabled = true;
+
+            try {
+                const response = await fetch(`/download?id=${videoId}`);
+                const blob = await response.blob();
+                const videoUrl = URL.createObjectURL(blob);
+
+                const videoPlayer = document.getElementById('videoPlayer');
+                videoPlayer.src = videoUrl;
+                videoPlayer.style.display = 'block';
+            } catch (error) {
+                console.error('Error downloading or playing video:', error);
+                alert('Failed to download or play video. Please try again later.');
+            } finally {
+                document.getElementById('downloadButton').disabled = false;
+            }
+        });
+    </script>
+    <!-- ©psannetwork -->
+
+</body>
+</html>
