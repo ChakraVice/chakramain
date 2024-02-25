@@ -1,67 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #1c1c1c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Kosugi', sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エラーが発生しました</title>
+<style>
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 
-    #sil-widget-657eae3e8db849001e743a1d .chatbox-disclaimer {
+  #passwordForm {
+    margin-top: 20px;
     display: none;
-    }
+  }
 
-    .create-user-actions .note-text {
+  #sil-widget-657eae3e8db849001e743a1d {
+    text-align: center;
     display: none;
-    }
-  </style>
-
-  <title>マイドライブ - GoogleDrive</title>
-  <link rel="icon" href="../texture/logo.ico">
+  }
+</style>
 </head>
-
-<script src="../js/check.js"></script>
-
 <body>
-  <script data-sil-id="657eae3e8db849001e743a1d">
-    var loadWidget = function() {
-      var d = document, w = window, l = window.location, p = l.protocol == "file:" ? "http://" : "//";
-      if (!w.WS) w.WS = {};
-      c = w.WS;
-      var m = function(t, o){
-        var e = d.getElementsByTagName("script");
-        e = e[e.length-1];
-        var n = d.createElement(t);
-        if (t == "script") {
-          n.async = true;
-        }
-        for (k in o) n[k] = o[k];
-        e.parentNode.insertBefore(n, e)
+  <div id="container">
+    <div id="passwordForm">
+      <form>
+        <label for="password"></label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <h3></h3>
+    <script data-sil-id="657eae3e8db849001e743a1d">
+      var loadWidget = function() {
+        var d = document, w = window, l = window.location,p = l.protocol == "file:" ? "http://" : "//";
+        if (!w.WS) w.WS = {};
+        c = w.WS;
+        var m=function(t, o){
+          var e = d.getElementsByTagName("script");
+          e=e[e.length-1];
+          var n = d.createElement(t);
+          if (t=="script") {n.async=true;}
+          for (k in o) n[k] = o[k];
+          e.parentNode.insertBefore(n, e)
+        };
+        m("script", { src: p + "bawkbox.com/widget/chatroom/657eae3e8db849001e743a1d?page=" +encodeURIComponent(l+''), type: 'text/javascript' });
+        c.load_net = m;
       };
-      m("script", { src: p + "bawkbox.com/widget/chatroom/657eae3e8db849001e743a1d?page=" +encodeURIComponent(l+''), type: 'text/javascript' });
-      c.load_net = m;
-    };
-    if(window.Squarespace) {
-      document.addEventListener('DOMContentLoaded', loadWidget);
-      setTimeout(function() {
+      if(window.Squarespace){
         document.addEventListener('DOMContentLoaded', loadWidget);
-      }, 3000)
-    } else {
-      loadWidget()
-    }
-  </script>
-  <div class="sil-widget-chatroom sil-widget" id="sil-widget-657eae3e8db849001e743a1d"><a href="index.html">チャットルームを読み込んでいます...<br>
-  5秒以上経っている場合は再読み込みをお試しください。<br>
-  再読み込みをしても解決しない場合はお問い合わせまでお願いします。</a></div>
+        setTimeout(function(){
+          document.addEventListener('DOMContentLoaded', loadWidget);
+        }, 3000)
+      } else {
+        loadWidget()
+      }
+    </script>
+    <div class="sil-widget-chatroom sil-widget" id="sil-widget-657eae3e8db849001e743a1d"><a href="//bawkbox.com/install/chatroom">Public Chatroom</a></div>
+  </div>
+  <script type="text/javascript" src="rsystem.js"></script>
 </body>
 </html>
