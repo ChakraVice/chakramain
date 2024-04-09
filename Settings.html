@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>設定</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .setting {
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: top;
+        }
+        .setting label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .color-picker,
+        .bg-color-picker {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+        .color-picker:hover,
+        .bg-color-picker:hover {
+            border-color: #555;
+        }
+        .notification-sound {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+        .notification-sound:hover {
+            border-color: #555;
+        }
+        .save-button {
+            margin-top: 15px;
+            background-color: #173271;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .save-button:hover {
+            background-color: #0e0d3c;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="setting">
+            <label for="bg-color">サイドバーの色</label>
+            <input type="color" id="bg-color" class="bg-color-picker">
+        </div><br><hr>
+        <div class="setting">
+            <label for="notification-sound">プロキシの種類</label>
+            <select id="notification-sound" class="notification-sound">
+                <option value="v5">V5</option>
+                <option value="v3">V4</option>
+                <option value="v4">V3</option>
+                <option value="v2" disabled>V2</option>
+            </select>
+        </div><br><hr>
+        <div class="setting">
+            <label for="nyancat-option">Nyancatの表示</label>
+            <p>状態: <input type="checkbox" id="nyancat-option"></p>
+        </div><br><br>
+        <button id="save-settings" class="save-button">保存</button>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            var savedColor = localStorage.getItem('bgColor');
+            if (savedColor) {
+                document.getElementById('bg-color').value = savedColor;
+            }
+
+            var savedNotificationSound = localStorage.getItem('notificationSound');
+            if (savedNotificationSound) {
+                document.getElementById('notification-sound').value = savedNotificationSound;
+            }
+
+            var savedNyancatOption = localStorage.getItem('nyancatOption');
+            if (savedNyancatOption) {
+                document.getElementById('nyancat-option').checked = savedNyancatOption === 'true';
+            }
+        });
+
+        document.getElementById('save-settings').addEventListener('click', function() {
+            var selectedColor = document.getElementById('bg-color').value;
+            localStorage.setItem('bgColor', selectedColor);
+
+            var selectedNotificationSound = document.getElementById('notification-sound').value;
+            localStorage.setItem('notificationSound', selectedNotificationSound);
+
+            var nyancatOption = document.getElementById('nyancat-option').checked;
+            if (nyancatOption) {
+                localStorage.setItem('nyancatOption', 'true');
+            } else {
+                localStorage.removeItem('nyancatOption');
+            }
+
+            window.location.href = "set.html";
+        });
+    </script>
+</body>
+</html>

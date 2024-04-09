@@ -1,201 +1,322 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
-    <title>マイドライブ - GoogleDrive</title>
-    <link rel="icon" href="texture/logo.ico">
-    <link rel="stylesheet" href="texture/css/index.css">
-    <style>
-        body {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: rgb(236, 235, 250);
-            cursor: default;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beta</title>
+<link rel="icon" href="texture/logo/favicon.ico">
+<link rel="apple-touch-icon" href="texture/logo/logo.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
+<script src="js/main.js"></script>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Noto Sans JP', sans-serif;
+        overflow: hidden;
+    }
 
-        header {
-            background-color: #3e348e;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 20px;
-        }
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 75px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 
-        header:hover {
-        color: #ffffff;
-        transition: color 0.5s;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        nav {
-        text-align: right;
-        }
-
-        section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.259);
-        }
-
-        h2, h3 {
-            margin: 0;
-        }
-
-        h2 {
-            font-size: 24px;
-        }
-
-        h3 {
-            font-size: 20px;
-        }
-
-        p {
-            margin: 5px 0;
-        }
-
-        .box-image {
-            width: 50px;
-            height: 50px;
-            background-size: cover;
-            margin-right: 15px;
-        }
-
-        .feature1 { background-image: url('texture/v3.png'); }
-        .feature2 { background-image: url('texture/game.png'); }
-        .feature3 { background-image: url('texture/yt.png'); }
-        .feature4 { background-image: url('texture/mc.png'); }
-        .feature5 { background-image: url('texture/his.png'); }
-        .feature6 { background-image: url('texture/id.png'); }
-        .feature7 { background-image: url('texture/3.png'); }
-        .feature8 { background-image: url('texture/screen.png'); }
-        .feature9 { background-image: url('texture/gpt.png'); }
-        .feature10 { background-image: url('texture/music.png'); }
-        .feature11 { background-image: url('texture/rec.png'); }
-        .feature12 { background-image: url('texture/chatgpt.png'); }
-        .feature13 { background-image: url('texture/v31.png'); }
-        .feature14 { background-image: url('texture/v32.png'); }
-
-        .announcement1 { background-image: url('texture/ank.png'); }
-        .announcement3 { background-image: url('texture/line.png'); }
-        .announcement2 { background-image: url('texture/ans.png'); }
-        .announcementp { background-image: url('texture/dt.png'); }
-
-        .box-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .feature-box, .announcement-box {
-            margin: 20px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            display: flex;
-            position: relative;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .feature-box:hover, .announcement-box:hover {
-        background-color: rgba(200, 200, 200, 0.258);
-        transform: translateX(10px);
-        }
-
-        html {
-        font-family: sans-serif;
-        }
-
-        a {
-        color: #999;
+    .menu a {
+        display: block;
+        color: white;
         text-decoration: none;
-        }
+        margin-bottom: 20px;
+        position: relative;
+    }
 
-        ul {
-        list-style: none;
-        padding: 0;
-        }
+    .menu a .icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: filter 0.3s ease, transform 0.3s ease;
+    }
 
-        #text {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
+    .menu a .icon.more {
+        background-image: url('texture/icon/more.png');
+        background-size: cover;
+    }
 
-        #contact {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-        }
+    .menu a .icon.logout {
+        background-image: url('texture/icon/logout.png');
+        background-size: cover;
+    }
 
-        body {
-         margin: 0;
-        padding: 0;
-         }
-    </style>
+    .menu a .icon.info {
+        background-image: url('texture/icon/info.png');
+        background-size: cover;
+    }
+
+    .menu a .icon.top {
+        background-image: url('texture/icon/1.png');
+        background-size: cover;
+    }
+
+    .menu a .icon.proxy {
+        background-image: url('texture/icon/2.png');
+        background-size: cover;
+    }
+
+    .menu a .icon.youtube {
+        background-image: url('texture/icon/3.png');
+        background-size: cover;
+    }
+
+    .menu a .icon.music {
+        background-image: url('texture/icon/4.png');
+        background-size: cover;
+    }
+
+    .menu a .icon.games {
+        background-image: url('texture/icon/5.png');
+        background-size: cover;
+    }
+
+    .menu a .icon.chat {
+        background-image: url('texture/icon/6.png');
+        background-size: cover;
+    }
+
+    .menu a .icon.sns {
+        background-image: url('texture/icon/7.png');
+        background-size: cover;
+    }
+
+    .menu a .icon.file {
+        background-image: url('texture/icon/8.png');
+        background-size: cover;
+    }
+
+    .menu a .icon.pay {
+        background-image: url('texture/icon/donate.png');
+        background-size: cover;
+    }
+
+    .menu a .icon:hover {
+        transform: scale(1.2);
+        filter: hue-rotate(90deg);
+    }
+
+    .menu a .details {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+        background-color: #333333;
+        color: white;
+        border-radius: 5px;
+        white-space: nowrap;
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
+        z-index: 1;
+        font-size: 14px;
+    }
+
+    .menu a:hover .details {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .content {
+        margin-left: 75px;
+        box-sizing: border-box;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100vh;
+        border: none;
+    }
+
+    .fixed-image {
+        position: fixed;
+        left: -100px;
+        bottom: 0px;
+        width: 180px;
+        height: 85px;
+    }
+</style>
+</head>
+<body>
+<div class="menu">
+    <a href="#" onclick="loadContent('TOP.html')">
+        <span class="icon top"></span>
+        <span class="details">トップ</span>
+    </a>
+    <a href="#" onclick="loadContent('cm.html')">
+        <span class="icon sns"></span>
+        <span class="details">コミュニティ</span>
+    </a>
+    <a href="#" onclick="loadContent(url)">
+        <span class="icon proxy"></span>
+        <span class="details">プロキシ</span>
+    </a>
+    <a href="#" onclick="loadContent('https://yt-app.chakra.wtf')">
+        <span class="icon youtube"></span>
+        <span class="details">YouTube</span>
+    </a>
+    <a href="#" onclick="loadContent('games/index.html')">
+        <span class="icon games"></span>
+        <span class="details">ゲーム</span>
+    </a>
+    <a href="#" onclick="loadContent('chat/index.html')">
+        <span class="icon chat"></span>
+        <span class="details">チャット</span>
+    </a>
+
+    <a href="#" onclick="loadContent('comingsoon.html')">
+        <span class="icon music"></span>
+        <span class="details">???</span>
+    </a>
+
+
+    <!--
+    <a href="#" onclick="loadContent('https://circula.lol/file/')">
+        <span class="icon info"></span>
+        <span class="details">ファイル</span>
+    </a>
+    -->
     
-    <script>
-        var chakraLoginValue = localStorage.getItem("chakralogin");
-        
-        if (!chakraLoginValue) {
-            window.location.href = "login/index.html";
-        }
-    </script>
+    <!-- 固定 -->
+    <a href="#" onclick="loadContent('contact.html')">
+        <span class="icon file"></span>
+        <span class="details">お問い合わせ</span>
+    </a>
+
+    <a href="#" onclick="loadContent('comingsoon.html')">
+        <span class="icon pay"></span>
+        <span class="details">プレミアム</span>
+    </a>
     
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MWD3J59G5"></script>
+    <a href="#" onclick="loadContent('Settings.html')">
+        <span class="icon more"></span>
+        <span class="details">設定</span>
+    </a>
+
+    <a href="user/logout.html" onclick="loadContent('')">
+        <span class="icon logout"></span>
+        <span class="details">退出</span>
+    </a>
+
+</div>
+
+<div class="content">
+    <iframe id="iframe" src="none.html" frameborder="0" scrolling="yes"></iframe>
+</div>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2MWD3J59G5');
+    function loadContent(url) {
+        document.getElementById('iframe').src = url;
+        return false;
+    }
 </script>
 
+<script>
+const savedBgColor = localStorage.getItem('bgColor');
+const menuElement = document.querySelector('.menu');
 
+if (savedBgColor) {
+    menuElement.style.backgroundColor = savedBgColor;
+} else {
+    menuElement.style.backgroundColor = '#1c1c1c';
+}
 
-    <section id="features">
-        <div class="feature-box" onclick="location.href='https://prx.circula.lol/'">
-            <div class="box-image feature14"></div>
-            <div class="box-text">
-                <h3>Proxy V3</h3>
-                <p>フィルタリング回避</p>
-            </div>
-        </div>
+</script>
 
-        <div class="feature-box" onclick="location.href='feature/history/index.html'">
-            <div class="box-image feature5"></div>
-            <div class="box-text">
-                <h3>履歴スパム</h3>
-                <p>履歴を隠蔽します</p>
-            </div>
-        </div>
-        <div class="feature-box" onclick="location.href='feature/screen/index.html'">
-            <div class="box-image feature8"></div>
-            <div class="box-text">
-                <h3>スクリーンショット</h3>
-                <p>スクリーンショットを撮ることができます</p>
-            </div>
-        </div>
-        <div class="feature-box" onclick="location.href='feature/screen/rec/index.html'">
-            <div class="box-image feature11"></div>
-            <div class="box-text">
-                <h3>画面録画</h3>
-                <p>画面を録画できます</p>
-            </div>
-        </div>
-        <div class="feature-box" onclick="location.href='id/index.html'">
-            <div class="box-image feature6"></div>
-            <div class="box-text">
-                <h3>チャット</h3>
-                <p>チャットができます</p>
-            </div>
-        </div>
-        </div>
-    </section>
+<script>
+var notificationSound = localStorage.getItem('notificationSound');
+
+var url;
+if (notificationSound === 'v4') {
+    url = 'https://prx2-app.chakra.wtf/';
+} else if (notificationSound === 'v5') {
+    url = 'https://prx5-app.chakra.wtf/search.html';
+} else {
+    url = 'https://prx-app.chakra.wtf/';
+}
+
+function loadContent(url) {
+    document.getElementById('iframe').src = url;
+}
+
+</script>
+
+<script>
+var nyancatOption = localStorage.getItem("nyancatOption");
+
+if (nyancatOption === "true") {
+    document.write('<img src="texture/cat.gif" alt="Cat" class="fixed-image">');
+}
+</script>
+
+<script>
+    if (window.location.href.endsWith("#s")) {
+     document.getElementById("iframe").src = "s.html";
+    }
+</script>
+
+<!--FPS-->
+<style>
+#fpsCounter {
+    position: fixed;
+    bottom: 1px;
+    right: 1px;
+    color: rgb(255, 0, 0);
+    font-size: 11px;
+    font-family: Noto Sans JP, sans-serif;
+    padding: 5px 10px;
+    cursor: default;
+    z-index: 9999;
+}
+
+    #fpsCounter:hover {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+  <i><b><div id="fpsCounter"><span id="fpsValue">0</span> FPS</div></b></i>
+  <script>
+    let fpsValue = document.getElementById("fpsValue");
+
+    let frameCount = 0;
+    let lastTime = performance.now();
+    function updateFPS() {
+      frameCount++;
+
+      let now = performance.now();
+      let delta = now - lastTime;
+
+      if (delta >= 50) {
+        let fps = frameCount / (delta / 1000);
+        fpsValue.textContent = fps.toFixed(0);
+        frameCount = 0;
+        lastTime = now;
+      }
+
+      requestAnimationFrame(updateFPS);
+    }
+
+    updateFPS();
+  </script>
+  <!--FPSEND-->  
+
 </body>
 </html>
